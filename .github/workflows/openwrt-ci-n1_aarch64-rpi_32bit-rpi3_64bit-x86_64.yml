@@ -122,7 +122,7 @@ jobs:
           docker build -f ./Dockerfile -t lede-${{ matrix.db-backend }}:latest .
 
       - name: Push DockerImage
-         run: |
+        run: |
           mkdir docker-build && cd docker-build
           sudo docker login --username=$DOCKER_REGISTRY_USERNAME --password=${{ secrets.ALIDOCKER_KEY }}  $DOCKER_REGISTRY_HOST
          echo "============================="
