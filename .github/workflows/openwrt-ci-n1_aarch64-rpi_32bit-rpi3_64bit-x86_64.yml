@@ -46,6 +46,7 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
+          echo  $DOCKER_REGISTRY_URL"lede-"${{ matrix.db-backend }}:latest
           docker rmi `docker images -q`
           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
@@ -115,8 +116,8 @@ jobs:
           echo "======================="
           path=$(find -type f -name "*rootfs.tar.gz")
           echo "======================="
-          echo ${{ path }}
-          mv ${{ path }} docker-build/
+          echo $path
+          mv $path docker-build/
           cp  ${{ matrix.db-backend }}-Dockerfile docker-build/Dockerfile
           cd docker-build
           docker build -f ./Dockerfile -t lede-${{ matrix.db-backend }}:latest .
@@ -132,5 +133,5 @@ jobs:
          echo "============================="
          echo $ImageId
          echo "============================="
-         sudo docker tag ${{ ImageId }} ${{ DOCKER_REGISTRY_URL }}lede-${{ matrix.db-backend }}:latest
-         sudo docker push ${{ DOCKER_REGISTRY_URL }}lede-${{ matrix.db-backend }}:latest
+         sudo docker tag $ImageId $DOCKER_REGISTRY_URL"lede-"${{ matrix.db-backend }}:latest
+         sudo docker push $DOCKER_REGISTRY_URL"lede-"${{ matrix.db-backend }}:latest
