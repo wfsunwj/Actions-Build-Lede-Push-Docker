@@ -110,12 +110,12 @@ jobs:
 
       - name: Build DockerImage
         run: |
-          mkdir docker-build && cd docker-build
+          mkdir docker-build
           echo "======================="
           path=$(find -type f -name "*rootfs.tar.gz")
           echo "======================="
           echo $path
-          mv $path docker-build/
+          mv $path /ocker-build/
           cp  ${{ matrix.db-backend }}-Dockerfile docker-build/Dockerfile
           cd docker-build
           docker build -f ./Dockerfile -t lede-${{ matrix.db-backend }}:latest .
