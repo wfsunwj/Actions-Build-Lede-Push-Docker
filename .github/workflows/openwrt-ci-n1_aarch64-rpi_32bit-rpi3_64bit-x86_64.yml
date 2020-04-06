@@ -15,10 +15,8 @@ on:
     branches: 
       - master
     paths-ignore:
-      - .github/workflows/openwrt-ci-n1.yml
-      - .github/workflows/openwrt-ci-rpi2-3-4.yml
-      - .github/workflows/openwrt-ci-rpi364.yml
-      - .github/workflows/openwrt-ci-x64.yml
+      - "*.md"
+      - "*.docx"
 
 env:
   DOCKER_REGISTRY_USERNAME: muyeyifeng@163.com	#email
