@@ -113,9 +113,9 @@ jobs:
           mkdir docker-build
           echo "======================="
           path=$(find -type f -name "*rootfs.tar.gz")
-          echo "======================="
           echo $path
-          mv $path /ocker-build/
+          echo "======================="
+          mv $path docker-build/
           cp  ${{ matrix.db-backend }}-Dockerfile docker-build/Dockerfile
           cd docker-build
           docker build -f ./Dockerfile -t lede-${{ matrix.db-backend }}:latest .
