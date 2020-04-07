@@ -122,7 +122,6 @@ jobs:
 
       - name: Push DockerImage
         run: |
-         mkdir docker-build && cd docker-build
          sudo docker login --username=$DOCKER_REGISTRY_USERNAME --password=${{ secrets.ALIDOCKER_KEY }}  $DOCKER_REGISTRY_HOST
          echo "============================="
          sudo docker images
