@@ -1,9 +1,6 @@
 #
 # This is free software, lisence use MIT.
 # 
-# 
-# <https://github.com/KFERMercer/OpenWrt-CI>
-# 
 
 ####需要设置secrets.ALIDOCKER_KEY####
 ####阿里云镜像仓库-->访问权限-->固定密码####
