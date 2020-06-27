@@ -14,6 +14,8 @@ on:
     paths-ignore:
       - "*.md"
       - "*.docx"
+  schedule:
+    - cron: 0 20 * * 1/4
 
 env:
   DOCKER_REGISTRY_USERNAME: muyeyifeng@163.com	#email
