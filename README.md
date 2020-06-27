@@ -159,7 +159,7 @@ Dockerfile内容>>
 
 
 
-最终在docker.com上生成imang的同学可以pull到本地再参考上面的链接。
+最终在docker.com上生成image的同学可以pull到本地再参考上面的链接。
 
 
 
@@ -197,4 +197,13 @@ docker run --restart always --name openwrt -d --network macnet --privileged 0077
 
 
 
-#######云编译直接生成DOCKER见DOCX文件说明###########
+#######云编译直接生成DOCKER说明###########
+
+
+本地（或其他途径）经make menuconfig 及 ./scripts/diffconfig.sh 后获得 defconfig 配置文件，替换项目中的defconfig
+
+
+使用本项目的编译源码，添加Setting->Secrets->ALIDOCKER_KEY  (从阿里云镜像服务中获得)
+
+
+修改env中的DOCKER_REGISTRY参数，提交Action即可
