@@ -15,7 +15,7 @@ on:
       - "*.md"
       - "*.docx"
   schedule:
-    - cron: 0 20 * * 1/4
+    - cron: 0 20 * * 0/3
 
 env:
   DOCKER_REGISTRY_USERNAME: muyeyifeng@163.com	#email
